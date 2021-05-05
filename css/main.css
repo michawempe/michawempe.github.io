@@ -103,7 +103,7 @@ a:link, a:visited {
   z-index: 2;
 }
 .workNavigation1 {
-  width: 100vw;
+  width: 3em;
   height: 100vh;
   margin: 0;
   display: flex;
@@ -112,18 +112,20 @@ a:link, a:visited {
   justify-content: space-between;
   position: fixed;
   z-index: 1;
+  right: 0;
 }
 
 .workNavigation2 {
-  width: 100vw;
-  height: 100vh;
+  width: 3em;
+  height: 120vh;
   margin: 0;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: space-between;
   position: fixed;
-  z-index: 3;
+  z-index: 1;
+  right: 0;
 }
 
 .workNavigationBox1 {
@@ -152,15 +154,14 @@ a:link, a:visited {
 .workNavigationBoxText {
   width: 20vh;
   height: 3em;
-  margin-top: calc(10vh - 1.5em);
+  margin-top: 10vh;
   margin-bottom: calc(10vh - 1.5em);
-  margin-right: calc(-10vh + 1.5em);
+  margin-right: calc(-10vh + 1em);
   padding: 0;
-  color: #000000;
   transform: rotate(90deg);
-  text-align: center;
   vertical-align: middle;
-  line-height: 2.5em;
+  text-align: center;
+  line-height: 0;
 }
 
 .scrollIcon {

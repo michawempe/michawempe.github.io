@@ -84,21 +84,6 @@ function scrollPlayFive(){
 }
 window.requestAnimationFrame(scrollPlayFive);
 
-// video 6
-
-playbackConstSix = 1800,
-setHeight = document.getElementById("set-height"),
-vidSix = document.getElementById('v5');
-vidSix.addEventListener('loadedmetadata', function() {
-  setHeight.style.height = Math.floor(vidSix.duration) * playbackConstSix + "px";
-});
-function scrollPlaySix(){
-  var frameNumber  = (window.pageYOffset - 24420)/playbackConstSix;
-  vidSix.currentTime  = frameNumber;
-  window.requestAnimationFrame(scrollPlaySix);
-}
-window.requestAnimationFrame(scrollPlaySix);
-
 document.onmousewheel = function( e ) {
   var animationBox = (window.pageYOffset / 4070) * (window.innerHeight / 5);
   document.getElementById("navigationBox").style.top = animationBox + "px";
