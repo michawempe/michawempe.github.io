@@ -1,76 +1,76 @@
-var frameNumber = 0, // start video at frame 0
-// lower numbers = faster playback
+// Load Video
+var is_firefox = navigator.userAgent.indexOf('Firefox') > -1;
 
-// video 1
+var video0 = document.getElementById("v0");
+var video1 = document.getElementById("v1");
+var video2 = document.getElementById("v2");
+var video3 = document.getElementById("v3");
+var video4 = document.getElementById("v4");
 
-playbackConstOne = 700,
-
-// select video element
-vidOne = document.getElementById('v0');
-// var vid = $('#v0')[0]; // jquery option
-
-
-// Use requestAnimationFrame for smooth playback
-function scrollPlayOne(){
-  var frameNumber  = (window.pageYOffset)/playbackConstOne;
-  vidOne.currentTime  = frameNumber;
-  window.requestAnimationFrame(scrollPlayOne);
+if (is_firefox) {
+  video0.src = "https://www.dropbox.com/s/91iwfbjy70yrw02/Corporate_FF_210520.ogv?raw=1";
+  video1.src = "https://www.dropbox.com/s/11aegxjfc18dskh/Magazin_FF_210520.ogv?raw=1";
+  video2.src = "https://www.dropbox.com/s/7vv937rlx5fxo97/Plakat_FF_210520.ogv?raw=1";
+  video3.src = "https://www.dropbox.com/s/8w1976vxgobcjka/Bierdeckel_FF_210520.ogv?raw=1";
+  video4.src = "https://www.dropbox.com/s/aiwckdci1z4jntn/Generativ_FF_210520.ogv?raw=1";
 }
-window.requestAnimationFrame(scrollPlayOne);
 
-// video 2
-
-playbackConstTwo = 1200,
-
-vidTwo = document.getElementById('v1');
-
-function scrollPlayTwo(){
-  var frameNumber  = (window.pageYOffset - 4000)/playbackConstTwo;
-  vidTwo.currentTime  = frameNumber;
-  window.requestAnimationFrame(scrollPlayTwo);
+else {
+  video0.src = "https://www.dropbox.com/s/q2bptjxflaxrckn/Corporate_1080_210517.mp4?raw=1";
+  video1.src = "https://www.dropbox.com/s/h9gjkjcnp9ugx2d/Magazin_1080_210517.mp4?raw=1";
+  video2.src = "https://www.dropbox.com/s/zekcgjjql5a71qr/Plakat_1080_210517.mp4?raw=1";
+  video3.src = "https://www.dropbox.com/s/2wnhupypihkpsq1/Bierdeckel_1080_210517.mp4?raw=1";
+  video4.src = "https://www.dropbox.com/s/evb44wf3pbouk8q/Generativ_1080_210517.mp4?raw=1";
 }
-window.requestAnimationFrame(scrollPlayTwo);
 
-// video 3
 
-playbackConstThree = 2200,
+// Animate Video
 
-vidThree = document.getElementById('v2');
+var frameNumber = 0;
+var playbackConst = [850, 970, 1700, 1500, 1470];
 
-function scrollPlayThree(){
-  var frameNumber  = (window.pageYOffset - 8000)/playbackConstThree;
-  vidThree.currentTime  = frameNumber;
-  window.requestAnimationFrame(scrollPlayThree);
-}
-window.requestAnimationFrame(scrollPlayThree);
+value = 0;
 
-// video 4
+window.onscroll = function() {
+  if ((window.pageYOffset) <= 4000) {
+    value = 0;
+  } else if ((window.pageYOffset) <= 8000) {
+    value = 1;
+  } else if ((window.pageYOffset) <= 12000) {
+    value = 2;
+  } else if ((window.pageYOffset) <= 16000) {
+    value = 3;
+  } else {
+    value = 4;
+  }
 
-playbackConstFour = 1800,
+  video = document.getElementById('v' + value);
 
-vidFour = document.getElementById('v3');
+  function scrollPlay(){
+    var frameNumber  = (window.pageYOffset - (value * 4000))/playbackConst[value];
+    video.currentTime  = frameNumber;
+    window.requestAnimationFrame(scrollPlay);
+  }
+  window.requestAnimationFrame(scrollPlay);
+  console.log(video);
+};
 
-function scrollPlayFour(){
-  var frameNumber  = (window.pageYOffset - 12000)/playbackConstFour;
-  vidFour.currentTime  = frameNumber;
-  window.requestAnimationFrame(scrollPlayFour);
-}
-window.requestAnimationFrame(scrollPlayFour);
 
-// video 5
-
-playbackConstFive = 1700,
-
-vidFive = document.getElementById('v4');
-
-function scrollPlayFive(){
-  var frameNumber  = (window.pageYOffset - 16000)/playbackConstFive;
-  vidFive.currentTime  = frameNumber;
-  window.requestAnimationFrame(scrollPlayFive);
-}
-window.requestAnimationFrame(scrollPlayFive);
+// Navigation Box Indicator
 
 document.onmousewheel = function( e ) {
-  var animationBox = (window.pageYOffset / 4000) * (window.innerHeight / 5);
+  var animationBox = ((window.pageYOffset / 4000) * (window.innerHeight / 5) - 8);
   document.getElementById("navigationBox").style.top = animationBox + "px";
 };
+
+
+// Text Box Show / Hide
+
+function myFunction(value) {
+  var x = document.getElementById("TextBox" + value);
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+}
