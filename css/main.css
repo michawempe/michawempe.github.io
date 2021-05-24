@@ -14,18 +14,22 @@ body {
 
 nav {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   position: fixed;
   /* background-color: rgba(236, 241, 237); */
   width: 100vw;
   height: 1.3em;
-  padding-bottom: 0.5em;
+  padding-top: 0.1em;
   font-size: 2em;
   z-index: 1;
 }
 
 a:not(:last-child) {
   padding-right: 2em;
+}
+
+a:last-child {
+  padding-right: 1em;
 }
 
 a:active, .marked {
@@ -39,6 +43,21 @@ a:hover{
 a:link, a:visited {
   text-decoration: none;
   color:#383838;
+}
+
+a.myWork {
+  padding-right: 3em;
+}
+
+.logo {
+  width: 3em;
+  padding: 0.5em;
+  height: auto;
+}
+
+.logoBox {
+  position: fixed;
+  z-index: 1;
 }
 
 .aboutBox {
@@ -102,8 +121,18 @@ margin-top: 2em;
   z-index: 1;
 }
 
+.videoBox_alt {
+  width: 100vw;
+  height: 200vh;
+  z-index: 1;
+}
+
 .videoBox:last-of-type {
   height: calc(4000px + 100vh);
+}
+
+.videoBox_alt:last-of-type {
+  height: 300vh;
 }
 
 .videoBoxsticky {
@@ -200,17 +229,6 @@ video{
   z-index: 2;
   grid-column-start: 2;
   grid-row-start: 2;
-}
-
-.logo {
-  width: 3em;
-  padding: 0.3em;
-  height: auto;
-}
-
-.logoBox {
-  position: fixed;
-  z-index: 1;
 }
 
 #navigationBox {

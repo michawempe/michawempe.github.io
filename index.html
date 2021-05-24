@@ -25,24 +25,23 @@
 <body>
 
   <nav>
-
-    <a>About me,</a>
-    <a href="myWork.html">My Works,</a>
-    <a>Contact</a>
+    <a href="#landingPage" >Micha Wempe,</a>
+    <a href="#about">Über mich,</a>
+    <a id="linkToWork">Meine Arbeiten</a>
   </nav>
 
-  <a href="index.html" class="logoBox">
+  <a class="logoBox">
     <img src="images/Logo_MichaWempe.png" alt="Logo" class="logo">
   </a>
 
-  <div class="aboutBox">
+  <div class="aboutBox" id="landingPage">
     <div class="nameBox">
       <p class="name" >Micha</p>
       <p class="name" >Wempe</p>
       <p class="subtitle" >Kommunikationsdesigner</p>
     </div>
   </div>
-  <div class="aboutBox">
+  <div class="aboutBox" id="about">
     <div class="aboutTextBox">
       <p class="aboutText">Hi,</p>
 <p class="aboutText">Ich bin Micha Wempe, ich studiere momentan „Kommunikationsdesign“ an der Hochschule Mainz und wohne auch in Mainz.
@@ -53,4 +52,20 @@
   </div>
 
 </body>
+
+<script>
+
+var isFirefox = navigator.userAgent.indexOf('Firefox') > -1;
+var isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+link = document.getElementById("linkToWork");
+
+if (isFirefox == true || isMobile == true) {
+  link.href = "myWork_alt.html"
+} else {
+  link.href = "myWork.html"
+}
+
+</script>
+
 </html>
