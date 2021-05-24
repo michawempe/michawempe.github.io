@@ -1,14 +1,10 @@
+// Play / Pause Video
+
 var video0 = document.getElementById("v0");
 var video1 = document.getElementById("v1");
 var video2 = document.getElementById("v2");
 var video3 = document.getElementById("v3");
 var video4 = document.getElementById("v4");
-
-video0.src = "https://www.dropbox.com/s/q2bptjxflaxrckn/Corporate_1080_210517.mp4?raw=1";
-video1.src = "https://www.dropbox.com/s/h9gjkjcnp9ugx2d/Magazin_1080_210517.mp4?raw=1";
-video2.src = "https://www.dropbox.com/s/zekcgjjql5a71qr/Plakat_1080_210517.mp4?raw=1";
-video3.src = "https://www.dropbox.com/s/2wnhupypihkpsq1/Bierdeckel_1080_210517.mp4?raw=1";
-video4.src = "https://www.dropbox.com/s/evb44wf3pbouk8q/Generativ_1080_210517.mp4?raw=1";
 
 window.onscroll = function() {
   if ((window.pageYOffset) <= (window.innerHeight * 2)) {
