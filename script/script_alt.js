@@ -39,11 +39,29 @@ document.onscroll = function( e ) {
 
 // Text Box Show / Hide
 
+var clicked = false;
+
 function myFunction(value) {
   var x = document.getElementById("TextBox" + value);
   if (x.style.display === "none") {
     x.style.display = "block";
+    clicked = true;
   } else {
+    x.style.display = "none";
+    clicked = false;
+  }
+}
+
+function hoverFunction(value) {
+  var x = document.getElementById("TextBox" + value);
+  x.style.display = "block";
+}
+
+function hoverFunctionOut(value) {
+  var x = document.getElementById("TextBox" + value);
+  if (clicked == true) {
+    x.style.display = "block";
+  } else if (clicked == false){
     x.style.display = "none";
   }
 }
