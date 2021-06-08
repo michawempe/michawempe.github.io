@@ -98,7 +98,7 @@ a.myWork {
 }
 
 .aboutText {
-  margin-top: 0.2em;
+  margin-top: 0.3em;
   margin-bottom: 0.2em;
 }
 
@@ -321,7 +321,6 @@ video{
   transform: rotate(90deg);
   vertical-align: middle;
   text-align: center;
-  line-height: ;
 }
 
 .textBottom {
@@ -342,6 +341,10 @@ video{
   left: 1em;
   top: 0px;
   color: #383838;
+}
+
+.contactText {
+  padding-top: 1em;
 }
 
 ::-webkit-scrollbar {
